@@ -85,4 +85,132 @@ public class OOP_project {
                     }
                     case "4": {
                         double x = readDouble(input, "Enter first number");
-       
+                        double y = readDouble(input, "Enter second number");
+                        if (y == 0) {
+                            System.out.println("Error: division by zero");
+                        } else {
+                            System.out.println(x + " / " + y + " = " + (x / y));
+                        }
+                        break;
+                    }
+                    case "5": {
+                        double x = readDouble(input, "Enter number");
+                        System.out.println(x + "^3 = " + pow(x, 3));
+                        break;
+                    }
+                    case "6": {
+                        double x = readDouble(input, "Enter number");
+                        if (x < 0) System.out.println("Warning: √ of negative is NaN for real numbers.");
+                        System.out.println("√" + x + " = " + sqrt(x));
+                        break;
+                    }
+                    case "7": {
+                        double x = readDouble(input, "Enter number");
+                        System.out.println(x + "^2 = " + pow(x, 2));
+                        break;
+                    }
+                    case "8": {
+                        double x = readDouble(input, "Enter base x");
+                        double y = readDouble(input, "Enter exponent y");
+                        System.out.println("x^y = " + pow(x, y));
+                        break;
+                    }
+                    case "9": {
+                        double x = readDouble(input, "Enter number");
+                        if (x == 0) System.out.println("Error: 1/0 undefined");
+                        else       System.out.println("1/" + x + " = " + (1.0 / x));
+                        break;
+                    }
+                    case "10": {
+                        double x = readDouble(input, "Enter number x");
+                        double y = readDouble(input, "Enter root y");
+                        if (y == 0) {
+                            System.out.println("Error: y cannot be 0");
+                        } else {
+                            System.out.println("x^(1/y) = " + pow(x, 1.0 / y));
+                        }
+                        break;
+                    }
+                    case "11": {
+                        double x = readDouble(input, "Enter number");
+                        System.out.println("cbrt(x) = " + cbrt(x));
+                        break;
+                    }
+                    case "12": {
+                        double x = readDouble(input, "Enter first number");
+                        double y = readDouble(input, "Enter second number");
+                        if (y == 0) System.out.println("Error: modulus by zero");
+                        else        System.out.println("x % y = " + (x % y));
+                        break;
+                    }
+                    case "13": {
+                        long n = readNonNegativeInt(input, "Enter n");
+                        // simple iterative factorial (beware overflow >20!)
+                        long fact = 1;
+                        for (long i = 2; i <= n; i++) fact *= i;
+                        System.out.println(n + "! = " + fact);
+                        break;
+                    }
+                    case "14": {
+                        double percent = readDouble(input, "Enter percentage x");
+                        double of = readDouble(input, "Enter value y");
+                        System.out.println(percent + "% of " + of + " = " + (percent * of / 100.0));
+                        break;
+                    }
+                    case "15": {
+                        double x = readDouble(input, "Enter x");
+                        System.out.println("log10(x) = " + log10(x));
+                        break;
+                    }
+                    case "16": {
+                        double x = readDouble(input, "Enter x");
+                        System.out.println("10^x = " + pow(10, x));
+                        break;
+                    }
+                    case "17": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        System.out.println("sin(" + deg + "°) = " + sin(toRadians(deg)));
+                        break;
+                    }
+                    case "18": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        System.out.println("cos(" + deg + "°) = " + cos(toRadians(deg)));
+                        break;
+                    }
+                    case "19": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        System.out.println("tan(" + deg + "°) = " + tan(toRadians(deg)));
+                        break;
+                    }
+                    case "20": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        double t = tan(toRadians(deg));
+                        if (t == 0.0) System.out.println("cot undefined at " + deg + "°");
+                        else          System.out.println("cot(" + deg + "°) = " + (1.0 / t));
+                        break;
+                    }
+                    case "21": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        double c = cos(toRadians(deg));
+                        if (c == 0.0) System.out.println("sec undefined at " + deg + "°");
+                        else          System.out.println("sec(" + deg + "°) = " + (1.0 / c));
+                        break;
+                    }
+                    case "22": {
+                        double deg = readDouble(input, "Enter angle (degrees)");
+                        double s = sin(toRadians(deg));
+                        if (s == 0.0) System.out.println("csc undefined at " + deg + "°");
+                        else          System.out.println("csc(" + deg + "°) = " + (1.0 / s));
+                        break;
+                    }
+                    default:
+                        System.out.println("Invalid option.");
+                }
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+                input.nextLine(); // clear any bad input
+            }
+        }
+    }
+}
+
